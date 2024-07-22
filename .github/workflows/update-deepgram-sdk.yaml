@@ -55,6 +55,9 @@ jobs:
               echo "No changes to commit"
             else
               git commit -m "chore: update Deepgram SDK to $LATEST_VERSION"
+              
+              # Pull the remote branch before pushing
+              git pull --rebase origin update-deepgram-sdk
               git push origin update-deepgram-sdk
             fi
           else
